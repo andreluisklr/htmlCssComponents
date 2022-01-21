@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 940px;
+
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.header__logo{
+    position: relative;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+}
+
+.header__logo::after{
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+
+    position: relative;
+    left: 5px;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 50%;
+    background: #3846c8;
+}
+
+.navegation__menu{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.navegation__item{
+    display: block;
+    width: auto;
+    height: auto;
+}
+
+.navegation__link{
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    font-size: 17px;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.navegation__link:hover{    
+    color: #3442c6;
+}
+
+.header__button{
+    background: #3442c6;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.menu-hamburguer{
+    display: none;
+}
+
+.hero{
+    display: flex;
+    align-items: center;
+    height: 400px;
+}
+
+.hero_informations{
+    width: 50%;
+}
+
+.hero__title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 120%;
+}
+
+.hero__content{
+    line-height: 25px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* opacity: .8; */
+    color: #6c6b7a;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.hero__button{
+    text-align: center;
+    width: 150px;
+    padding: 8px 20px;
+    background: #3442c7;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px; 
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.hero__image{
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 940px){
+    body{
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 897px){
+    .hero__image{
+        width: 50%;
+    }
+}
+
+@media (max-width: 650px){
+    .header__button{
+        display: none;
+    }
+
+    .menu-hamburguer{
+        height: auto;
+        display: flex;
+        padding: 10px;
+        border-radius: 50%;
+        
+        cursor: pointer;
+    }
+
+    .menu-hamburguer--fixed{
+        position: fixed;
+        right: 20px;
+        top: 20px;
+
+        background: #cecece;
+    }
+
+    .navegation{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #e6e6e6;
+    }
+
+    .navegation--flex{
+        display: flex;
+    }
+
+    .navegation__menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navegation__item{
+        width: 100%;
+        text-align: center;
+    }
+
+    .navegation__link{
+        padding: 20px;
+    }
+
+    .navegation__link:hover{
+        background: #3442c6;
+        color: #ffffff;
+        animation: link-hover 0.5s linear;
+    }
+
+    @keyframes link-hover{
+        0%{
+            opacity: .5;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 897px){
+    .hero{
+        flex-direction: column;
+        height: auto;
+        padding-top: 20px;
+    }
+    .hero__image{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 300px){
+    .hero__image{
+        width: 45%;
+    }
+}
+
+@media (max-height: 400px){
+    .navegation{
+        overflow-y: auto;
+    }
+
+    .navegation__menu{
+        gap: 10px;
+    }
+
+    .navegation__link{
+        padding: 10px;
+    }
+}
+
